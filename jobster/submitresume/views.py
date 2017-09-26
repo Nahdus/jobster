@@ -131,6 +131,7 @@ class resume_form(View):
     model = Resume
     form_class=resume_submit
     template_name='submitresume/submit_resume.html'
+    template_success='submitresume/Success.html'
 
     # displays blank form
     def get(self,request):
@@ -158,7 +159,7 @@ class resume_form(View):
 
 
             resume.save()
-            return render(request, self.template_name, {'form': form})
+            return render(request, self.template_success, {'form': form})
         else:
 
             return render(request, self.template_name, {'form': form})
