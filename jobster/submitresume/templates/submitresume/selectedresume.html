@@ -1,0 +1,25 @@
+{% extends 'submitresume/base.html' %}
+
+
+{% block body %}
+{% for resume in selectedresumes %}
+
+<div id="list-view">
+<ul>
+
+
+    <li>
+        <a href={{resume.id}}>
+            <div class="listitem">
+                <h3>{{resume.Name}}</h3>
+                <p>{{resume.Age}}</p>
+            </div>
+        </a>
+
+    </li>
+
+</ul>
+
+</div>
+{%endfor%}
+{% endblock %}

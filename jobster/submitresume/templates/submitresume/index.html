@@ -1,0 +1,35 @@
+
+{% extends 'submitresume/base.html' %}
+
+
+{% block body %}
+{% load staticfiles %}
+<div id="list-view">
+<ul>
+    <div class="listitem">
+ {% for resume in resumes %}
+
+    <li>
+        <a href={{resume.id}}>
+
+                <h3>{{resume.Name}}</h3>
+                <p>{{resume.Age}}</p>
+                <p>{{resume.Skills}}</p>
+            {% if  resume.is_selected %}
+        <img src="{% static "submitresume/tick.png" %}" alt="tick" height="42" width="42" align="right">
+            {% endif %}
+        </a>
+
+    </li>
+
+    {%endfor%}
+     </div>
+</ul>
+
+</div>
+
+{% endblock %}
+
+
+
+

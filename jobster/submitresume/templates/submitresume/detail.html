@@ -1,0 +1,23 @@
+
+{% extends 'submitresume/base.html' %}
+{% block body %}
+<div class="jumbotron">
+    <div id="content"></div>
+        <h2 class="display-3">{{resume.Name}}</h2>
+        <p>{{resume.Age}}</p>
+        <p>{{resume.Qualification}}</p>
+        <p>{{resume.Email}}</p>
+        <p>{{Phone_number}}</p>
+        <p class="lead">{{resume.About_Me}}</p>
+        <p>{{resume.Skills}}</p>
+    {% if resume.is_selected %}<p> <em>Selected</em></p>{%endif%}
+
+        <a class="btn btn-primary btn-lg" href="{% url 'submitresume:select' resume.id %}" role="button">{% if resume.is_selected %}Reject{% else %}Select{% endif %}</a>
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}
