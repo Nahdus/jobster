@@ -1,21 +1,24 @@
 {% extends 'submitresume/baseloggedout.html' %}
 
 {% block body %}
+<div class="container">
+    <form class="form-signin" action="" method="post" enctype="multipart/form-data">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {% csrf_token %}
+        {% if error_message %}
+        <span>{{error_message}}</span>
+        {% endif %}
+              <div>
+             <label>Username:</label><br>
+                <input id="id_username" class="input-block-level" maxlength="30" name="username" type="text"><br>
+              <label>Password:</label><br>
+                <input id="id_password" class="input-block-level" maxlength="30" name="password" type="password"><br>
+                <br>
 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% if error_message %}
-    <span>{{error_message}}</span>
-    {% endif %}
-          <div>
-         <label>Username:</label><br>
-            <input id="id_username" maxlength="30" name="username" type="text"><br>
-          <label>Password:</label><br>
-            <input id="id_password" maxlength="30" name="password" type="password"><br>
+          <button class="btn btn-large btn-primary" type="submit">submit</button>
 
-      <button type="submit">submit</button>
-
-</form>
+    </form>
+</div>
 
 
 {% endblock %}
